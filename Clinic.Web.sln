@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinic.Web", "Clinic.Web\Clinic.Web.csproj", "{48B78348-E51D-4976-BF6A-FC9ADB1755C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinic.EF", "Clinic.EF\Clinic.EF.csproj", "{E8D466B9-0715-4852-AB35-0520CEE9FCE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48B78348-E51D-4976-BF6A-FC9ADB1755C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B78348-E51D-4976-BF6A-FC9ADB1755C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B78348-E51D-4976-BF6A-FC9ADB1755C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B78348-E51D-4976-BF6A-FC9ADB1755C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D466B9-0715-4852-AB35-0520CEE9FCE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D466B9-0715-4852-AB35-0520CEE9FCE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D466B9-0715-4852-AB35-0520CEE9FCE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D466B9-0715-4852-AB35-0520CEE9FCE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F43B8B0F-9584-4E47-BE23-0A05744F9242}
+	EndGlobalSection
+EndGlobal
