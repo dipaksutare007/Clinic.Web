@@ -51,7 +51,8 @@ namespace Clinic.Core
 
         public void Update(T obj)
         {
-            throw new NotImplementedException();
+            dbentity.Attach(obj);
+            db.Entry(obj).State = System.Data.Entity.EntityState.Modified;
         }
     }
 }

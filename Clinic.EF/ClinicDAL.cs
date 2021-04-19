@@ -22,5 +22,7 @@ namespace Clinic.EF
         }
 
         public DbSet<Patient> Patients { get; set; }
+
+        public System.Data.Entity.DbSet<Clinic.EF.Entity.City> Cities { get; set; }
     }
 }

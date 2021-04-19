@@ -55,9 +55,9 @@
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Gender.cs" />
     <Compile Include="Entity\Patient.cs" />
-    <Compile Include="Migrations\202104181123418_Patient.cs" />
-    <Compile Include="Migrations\202104181123418_Patient.designer.cs">
-      <DependentUpon>202104181123418_Patient.cs</DependentUpon>
+    <Compile Include="Migrations\202104190252598_P1.cs" />
+    <Compile Include="Migrations\202104190252598_P1.designer.cs">
+      <DependentUpon>202104190252598_P1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,8 +67,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104181123418_Patient.resx">
-      <DependentUpon>202104181123418_Patient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104190252598_P1.resx">
+      <DependentUpon>202104190252598_P1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
