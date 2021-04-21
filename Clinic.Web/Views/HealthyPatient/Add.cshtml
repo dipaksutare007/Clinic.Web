@@ -3,117 +3,132 @@
     Layout = null;
 }
 
-
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 @using (Html.BeginForm("Add", "HealthyPatient", FormMethod.Post))
 {
 
-<table>
-    <tr>
-        <td>@Html.HiddenFor(m => m.Id)</td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Token, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.Token, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Token, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Name, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Sex, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.EnumDropDownListFor(m => m.Sex, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Sex, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.BirthDate, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.BirthDate, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.BirthDate, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Phone, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.Phone, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Phone, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Address, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextAreaFor(m => m.Address, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Address, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.CityId, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.CityId, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.DateTime, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.DateTime, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.DateTime, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Height, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.Height, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Height, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Weight, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.Weight, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Weight, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.LabelFor(m => m.Age, htmlAttributes: new { @class = "control-label" })
-        </td>
-        <td>
-            @Html.TextBoxFor(m => m.Age, htmlAttributes: new { @class = "form-Control" })
-            @Html.ValidationMessageFor(m => m.Age, "", htmlAttributes: new { @class = "text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input type="submit" name="btnSave" value="Save" />
-        </td>
-    </tr>
-</table>
+    <table>
+       
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Token, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Token, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Token, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Name, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Sex, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.EnumDropDownListFor(m => m.Sex, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Sex, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.BirthDate, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.BirthDate, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.BirthDate, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Phone, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Phone, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Phone, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Address, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextAreaFor(m => m.Address, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Address, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.CityId, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.CityId, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.DateTime, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.DateTime, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.DateTime, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Height, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Height, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Height, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Weight, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Weight, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Weight, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Age, htmlAttributes: new { @class = "control-label" })
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Age, htmlAttributes: new { @class = "form-Control" })
+                @Html.ValidationMessageFor(m => m.Age, "", htmlAttributes: new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="btnSave" value="Save" />
+            </td>
+        </tr>
+    </table>
 }
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#DateTime").datepicker(
+            { dateFormat: 'dd-mm-yy' });
+        $("#BirthDate").datepicker({ dateFormat: 'dd-mm-yy' });
+    })
+
+</script>

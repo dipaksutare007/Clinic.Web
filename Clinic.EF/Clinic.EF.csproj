@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClinicDAL.cs" />
+    <Compile Include="CustomValidation\DateMinimumAgeAttribute.cs" />
     <Compile Include="Entity\City.cs" />
     <Compile Include="Entity\Gender.cs" />
     <Compile Include="Entity\Patient.cs" />

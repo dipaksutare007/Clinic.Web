@@ -26,5 +26,21 @@ namespace Clinic.Web.Controllers
             ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
             return View();
         }
+        [HttpPost]
+        public ActionResult Add(Patient objpatient)
+        {
+            ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
+
+            if(ModelState.IsValid)
+            {
+                _PatientRepository.Insert(objpatient);
+                _PatientRepository.Save();
+            }
+            if(ModelState.IsValid==false)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+            }
+            return View();
+        }
     }
 }
