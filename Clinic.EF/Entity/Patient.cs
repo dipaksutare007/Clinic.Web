@@ -16,14 +16,14 @@ namespace Clinic.EF.Entity
         public Gender Sex { get; set; }
         [DateMinimumAge(18,ErrorMessage = "{0} must be someone at least {1} years of age")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
         public byte CityId { get; set; }
         public City Cities { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateTime { get; set; }
         public string Height { get; set; }
         public string Weight { get; set; }

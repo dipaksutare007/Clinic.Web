@@ -40,7 +40,7 @@ namespace Clinic.Web.Controllers
             {
                 var errors = ModelState.Values.SelectMany(v => v.Errors);
             }
-            return View();
+            return RedirectToAction("Add");
         }
     }
 }
