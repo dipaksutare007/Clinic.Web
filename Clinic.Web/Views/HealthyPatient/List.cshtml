@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Clinic.EF.Entity.Patient>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>
+                Token
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Sex
+            </th>
+            <th>
+                BirthDate
+            </th>
+
+            <th>
+                Phone
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Cityid
+            </th>
+            <th>
+                Datetime
+            <th>
+                Height
+            </th>
+            <th>
+                Weight
+            </th>
+        </tr>
+    </thead>
+    @foreach (var row in Model)
+    {
+<tr>
+    <td>@row.Token</td>
+    <td>@row.Name</td>
+    <td>@row.Sex</td>
+    <td>@row.BirthDate</td>
+    <td>@row.Phone</td>
+    <td>@row.Address</td>
+    <td>@row.Cities.Name</td>
+    <td>@row.DateTime</td>
+    <td>@row.Height</td>
+    <td>@row.Weight</td>
+    <td>@Html.ActionLink("Edit","Edit", new { id = row.Id }) | </td> |
+    <td> @Html.ActionLink("Delete", "Delete", new { id = row.Id })</td>
+
+</tr>
+    }
+
+</table>
+
