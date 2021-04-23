@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Clinic.Core;
 using Clinic.EF.Entity;
+using Clinic.EF.ViewModel;
 using Clinic.EF;
 using System.Data.Entity;
 namespace Clinic.Web.Controllers
@@ -26,23 +27,37 @@ namespace Clinic.Web.Controllers
         public ActionResult Add()
         {
             ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
+           
             return View();
         }
         [HttpPost]
-        public ActionResult Add(Patient objpatient)
+        public ActionResult Add(PatientViewModel objpatient)
         {
             ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
+            var Patients = new Patient { 
+              //  Id=objpatient.Id,
+                Name = objpatient.Name,
+                Token = objpatient.Token,
+                Sex = objpatient.Sex,
+                BirthDate = objpatient.BirthDate,
+                Phone = objpatient.Phone,
+                Address = objpatient.Address,
+                CityId = objpatient.CityId,
+                DateTime = objpatient.DateTime,
+                Height = objpatient.Height,
+                Weight=objpatient.Weight
 
+            };
             if(ModelState.IsValid)
             {
                 if(objpatient.Id > 0)
                 {
-                    _PatientRepository.Update(objpatient);
+                    _PatientRepository.Update(Patients);
                     _PatientRepository.Save();
                 }
                 else 
                 { 
-                _PatientRepository.Insert(objpatient);
+                _PatientRepository.Insert(Patients);
                 _PatientRepository.Save();
                 }
             }
@@ -63,8 +78,31 @@ namespace Clinic.Web.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
-            var data = _PatientRepository.GetbyID(id);
-            return View("Add",data);
+            var objpatient = _PatientRepository.GetbyID(id);
+            var Patients = new PatientViewModel
+            {
+                Id = objpatient.Id,
+                Name = objpatient.Name,
+                Token = objpatient.Token,
+                Sex = objpatient.Sex,
+                BirthDate = objpatient.BirthDate,
+                Phone = objpatient.Phone,
+                Address = objpatient.Address,
+                CityId = objpatient.CityId,
+                DateTime = objpatient.DateTime,
+                Height = objpatient.Height,
+                Weight = objpatient.Weight
+
+            };
+            return View("Add", Patients);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var objpatient = _PatientRepository.GetbyID(id);
+            _PatientRepository.Delete(objpatient);
+            _PatientRepository.Save();
+            return RedirectToAction("List");
         }
 
 
