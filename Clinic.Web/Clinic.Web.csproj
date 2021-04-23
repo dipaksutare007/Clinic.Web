@@ -187,6 +187,7 @@
     <Content Include="Views\Patients\Edit.cshtml" />
     <Content Include="Views\Patients\Index.cshtml" />
     <Content Include="Views\HealthyPatient\Add.cshtml" />
+    <Content Include="Views\HealthyPatient\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
