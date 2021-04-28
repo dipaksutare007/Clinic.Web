@@ -31,7 +31,7 @@ namespace Clinic.Web.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Add(PatientViewModel objpatient)
+        public ActionResult Add([Bind(Exclude = "Id")] PatientViewModel objpatient)
         {
             ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
             var Patients = new Patient { 
@@ -50,22 +50,52 @@ namespace Clinic.Web.Controllers
             };
             if(ModelState.IsValid)
             {
-                if(objpatient.Id > 0)
-                {
-                    _PatientRepository.Update(Patients);
-                    _PatientRepository.Save();
-                }
-                else 
-                { 
+                
+              
                 _PatientRepository.Insert(Patients);
                 _PatientRepository.Save();
-                }
+               
             }
             if(ModelState.IsValid==false)
             {
                 var errors = ModelState.Values.SelectMany(v => v.Errors);
             }
             return RedirectToAction("Add");
+        }
+
+        [HttpPost]
+        public ActionResult Edit(PatientViewModel objpatient)
+        {
+            ViewBag.CityId = new SelectList(_CityRepository.Getdata(), "Id", "Name");
+            var Patients = new Patient
+            {
+                 Id=objpatient.Id,
+                Name = objpatient.Name,
+                Token = objpatient.Token,
+                Sex = objpatient.Sex,
+                BirthDate = objpatient.BirthDate,
+                Phone = objpatient.Phone,
+                Address = objpatient.Address,
+                CityId = objpatient.CityId,
+                DateTime = objpatient.DateTime,
+                Height = objpatient.Height,
+                Weight = objpatient.Weight
+
+            };
+            if (ModelState.IsValid)
+            {
+                if (objpatient.Id > 0)
+                {
+                    _PatientRepository.Update(Patients);
+                    _PatientRepository.Save();
+                }
+                
+            }
+            if (ModelState.IsValid == false)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+            }
+            return RedirectToAction("List");
         }
 
         public ActionResult List()
@@ -94,7 +124,7 @@ namespace Clinic.Web.Controllers
                 Weight = objpatient.Weight
 
             };
-            return View("Add", Patients);
+            return View(Patients);
         }
 
         public ActionResult Delete(int id)
